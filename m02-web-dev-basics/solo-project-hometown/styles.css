@@ -1,0 +1,142 @@
+/**
+Palette: https://scrimba.com/links/hometown-palette
+RED: #E63946
+LIGHT: #F1FAEE
+AQUA: #A8DADC
+LIGHT BLUE: #457B9D
+DARK BLUE: #1D3557
+
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Bitter', serif;
+}
+
+#hero {
+    background: url('https://images.unsplash.com/photo-1516616370751-86d6bd8b0651?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
+    height: 343px;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #eee;
+}
+
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.hero-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0 0 2px #666;
+}
+
+.skew-bg {
+    transform: skew(-20deg);
+    padding: 8px 16px;
+    border-radius: 2px;
+}
+
+.hero-title {
+    background: hsla(37, 74%, 50%, 0.8);
+}
+
+.hero-title h1 {
+    transform: skew(20deg);
+    margin: 0 auto 2px;
+}
+
+.hero-subtitle {
+    background: hsla(27, 70%, 56%, 0.8);
+    margin-top: 1rem;
+}
+
+.hero-subtitle h2 {
+    transform: skew(20deg);
+    margin: 0 auto;
+}
+
+.activity-section {
+    margin: 1rem auto;
+}
+
+.activities {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.activities div {
+    padding: 1rem 0.5rem 0;
+    width: 100%;
+}
+
+.activities p {
+    color: #333;
+}
+
+.activities img {
+    clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%);
+    width: 220px;
+}
+
+.activities h4 {
+    margin: 0.75rem auto;
+}
+
+.guide {
+    display: flex;
+    align-items: center;
+    max-width: 400px;
+    background: #A8DADC;
+    margin: 0 auto 4rem;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0px 6px 0px 0px #1D3557;
+}
+
+.guide div {
+    padding: 0.5rem;
+}
+
+.guide p {
+    margin: 1rem auto;
+    font-style: italic;
+}
+
+.guide img {
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+
+@media screen and (min-width: 720px) {
+    .activities {
+        flex-direction: row;
+    }
+
+    .activities div {
+        width: 33%;
+    }
+}
