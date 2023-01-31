@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,15 +8,34 @@
   <link rel="stylesheet" href="index.css">
   <title>Solo Project: Basketball Scoreboard</title>
 </head>
+
 <body>
-  <div class="container">
-    <div>
+  <main class="main">
+    <div class="container">
+      <div class="scoreboard-section">
         <h3>HOME</h3>
-    </div>
-    <div>
+        <div id="home-score" class="scoreboard">0</div>
+        <div class="btn-section">
+          <button onclick="addHomeOne()">+1</button>
+          <button onclick="addHomeTwo()">+2</button>
+          <button onclick="addHomeThree()">+3</button>
+        </div>
+      </div>
+      <div class="scoreboard-section">
         <h3>GUEST</h3>
+        <div id="guest-score" class="scoreboard">0</div>
+        <div class="btn-section">
+          <button onclick="addGuestOne()">+1</button>
+          <button onclick="addGuestTwo()">+2</button>
+          <button onclick="addGuestThree()">+3</button>
+        </div>
+      </div>
     </div>
-</div>
-<script src="index.js"></script>  
+    <div class="container">
+      <button onclick="startNewGame()" class="btn-new-game">New Game</button>
+    </div>
+  </main>
+  <script src="index.js"></script>
 </body>
+
 </html>
