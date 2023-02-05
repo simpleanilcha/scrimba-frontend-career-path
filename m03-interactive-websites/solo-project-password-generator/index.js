@@ -12,14 +12,12 @@ function getRandomPassword() {
     passwordOne += characters[randomNumOne]
     passwordTwo += characters[randomNumTwo]
   }
-  // console.log(passwordOne, passwordTwo)
   return { passwordOne, passwordTwo }
 }
 
 function generateRandomPassword() {
-  // console.log('clicked')
   const {passwordOne, passwordTwo} = getRandomPassword()
-  // console.log(passwordOne, passwordTwo)
+
   const firstPasswordEl = document.getElementById('first-password')
   firstPasswordEl.textContent = passwordOne
   firstPasswordEl.classList.add('random-password')
@@ -27,13 +25,26 @@ function generateRandomPassword() {
   const secondPasswordEl = document.getElementById('second-password')
   secondPasswordEl.textContent = passwordTwo
   secondPasswordEl.classList.add('random-password')
-
 }
 
 function copyFirstPassword() {
-  if(passwordOne) navigator.clipboard.writeText(passwordOne);
+  if(passwordOne) {
+    navigator.clipboard.writeText(passwordOne);
+    showMessage()
+  }
 }
 
 function copySecondPassword() {
-  if(passwordTwo) navigator.clipboard.writeText(passwordTwo);
+  if(passwordTwo) {
+    navigator.clipboard.writeText(passwordTwo);
+    showMessage()
+  }
+}
+
+function showMessage() {
+  const msgEl = document.getElementById('copy-msg')
+  msgEl.classList.remove('d-none')
+  setTimeout(() => {
+    msgEl.classList.add('d-none')
+  }, 500)
 }
