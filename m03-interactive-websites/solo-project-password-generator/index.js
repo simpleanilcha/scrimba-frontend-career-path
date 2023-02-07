@@ -1,15 +1,12 @@
-// const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9","~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?","/"];
-
-
 const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 const symbols = ["~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?","/"]
-
 
 const pwLengthEl = document.getElementById('pw-length')
 let passwordLength = Number(pwLengthEl.textContent)
 
 let decreaseLengthEl, increaseLengthEl 
 
+// decrease password length
 function decreaseNum(e) {
   passwordLength -= 1
   decreaseLengthEl = document.querySelector('.btn-decrease')
@@ -23,6 +20,7 @@ function decreaseNum(e) {
   pwLengthEl.textContent = passwordLength
 }
 
+// increase password length
 function increaseNum() {
   passwordLength += 1
   increaseLengthEl = document.querySelector('.btn-increase')
@@ -37,22 +35,19 @@ function increaseNum() {
   pwLengthEl.textContent = passwordLength
 }
 
+// generate passwords
 let passwordOne, passwordTwo;
 
 function getRandomPassword() {
   let characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 
   const symbolEl = document.getElementById('pwSymbol').checked
-  console.log(symbolEl)
   if (symbolEl) characters = [...characters, ...symbols]
   else characters = [...characters]
-  // console.log(characters)
 
   const numberEl = document.getElementById('pwNumber').checked
-  console.log(numberEl)
   if (numberEl) characters = [...characters, ...numbers]
   else characters = [...characters]
-  console.log(characters)
 
   passwordOne = ''
   passwordTwo = ''
@@ -77,6 +72,7 @@ function generateRandomPassword() {
   secondPasswordEl.classList.add('random-password')
 }
 
+// copy password
 function copyFirstPassword() {
   if(passwordOne) {
     navigator.clipboard.writeText(passwordOne);
@@ -98,6 +94,3 @@ function showMessage() {
     msgEl.classList.add('d-none')
   }, 500)
 }
-
-// 
-

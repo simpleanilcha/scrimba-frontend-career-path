@@ -22,17 +22,7 @@
           <button class="btn btn-normal btn-small btn-decrease" onclick="decreaseNum()">-</button>
           <span id="pw-length">12</span>
           <button class="btn btn-normal btn-small btn-increase" onclick="increaseNum()">+</button>
-          <!-- <small>(min 8 - 15 max)</small> -->
         </div>
-
-        <!-- <div class="mb-1">
-          <input type="checkbox" id="pwSymbol" name="pwSymbol" checked>
-          <label for="pwSymbol">Include symbols</label>
-        </div>
-        <div class="mb-1">
-          <input type="checkbox" id="pwNumber" name="pwNumber" checked>
-          <label for="pwNumber">Include numbers</label>
-        </div> -->
 
         <div class="mb-1">
           <label class="checkbox-container">Include symbols
@@ -47,11 +37,10 @@
             <span class="checkmark"></span>
           </label>
         </div>
-
-        
       </div>
 
       <button class="btn btn-normal" onclick="generateRandomPassword()">Generate passwords</button>
+      <!-- password outputs -->
       <div class="password-outputs">
         <p class="btn btn-password" id="first-password" onclick="copyFirstPassword()"></p>
         <p class="btn btn-password" id="second-password" onclick="copySecondPassword()"></p>
