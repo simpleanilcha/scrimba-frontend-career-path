@@ -1,3 +1,8 @@
+// Module 3 - Solo Project Password Generator
+// Project details: https://scrimba.com/learn/frontend/solo-project-password-generator-cR9B46Sg
+// solution live link: https://generate-random-passwords.netlify.app/
+// solution scrim link: https://scrimba.com/scrim/co36e4852ac986dd9a0dc9325
+
 const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 const symbols = ["~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?","/"]
 
@@ -36,7 +41,16 @@ function increaseNum() {
 }
 
 // generate passwords
-let passwordOne, passwordTwo;
+const passwordOutputs = document.querySelectorAll('.btn-password')
+passwordOutputs.forEach(genPassword => {
+  genPassword.addEventListener('click', () => {
+    if (genPassword.textContent) {
+      console.log('clicked!', genPassword)
+      navigator.clipboard.writeText(genPassword.textContent);
+      showMessage()
+    }
+  })
+})
 
 function getRandomPassword() {
   let characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
@@ -49,42 +63,15 @@ function getRandomPassword() {
   if (numberEl) characters = [...characters, ...numbers]
   else characters = [...characters]
 
-  passwordOne = ''
-  passwordTwo = ''
-  for (let i = 0; i < passwordLength; i++) {
-    const randomNumOne = Math.floor(Math.random() * characters.length);
-    const randomNumTwo = Math.floor(Math.random() * characters.length);
-    passwordOne += characters[randomNumOne]
-    passwordTwo += characters[randomNumTwo]
-  }
-  return { passwordOne, passwordTwo }
-}
+  passwordOutputs.forEach(passwordField => {
+    let password = ''
+    for (let i = 0; i < passwordLength; i++) {
+      password += characters[Math.floor(Math.random() * characters.length)]
+    }
+    passwordField.textContent = password
+    passwordField.classList.add('random-password')
+  })
 
-function generateRandomPassword() {
-  const {passwordOne, passwordTwo} = getRandomPassword()
-
-  const firstPasswordEl = document.getElementById('first-password')
-  firstPasswordEl.textContent = passwordOne
-  firstPasswordEl.classList.add('random-password')
-
-  const secondPasswordEl = document.getElementById('second-password')
-  secondPasswordEl.textContent = passwordTwo
-  secondPasswordEl.classList.add('random-password')
-}
-
-// copy password
-function copyFirstPassword() {
-  if(passwordOne) {
-    navigator.clipboard.writeText(passwordOne);
-    showMessage()
-  }
-}
-
-function copySecondPassword() {
-  if(passwordTwo) {
-    navigator.clipboard.writeText(passwordTwo);
-    showMessage()
-  }
 }
 
 function showMessage() {
