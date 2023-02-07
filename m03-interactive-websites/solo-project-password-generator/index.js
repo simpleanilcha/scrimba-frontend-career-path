@@ -1,5 +1,6 @@
 // Module 3 - Solo Project Password Generator
 // Project details: https://scrimba.com/learn/frontend/solo-project-password-generator-cR9B46Sg
+// Figma file: https://www.figma.com/file/YRO9Iw5IYaOorjnRyNz4bV/Random-Password-Generator?node-id=0%3A1
 // solution live link: https://generate-random-passwords.netlify.app/
 // solution scrim link: https://scrimba.com/scrim/co36e4852ac986dd9a0dc9325
 
