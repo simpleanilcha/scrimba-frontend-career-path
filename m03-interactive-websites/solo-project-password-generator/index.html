@@ -13,9 +13,45 @@
 <body>
   <main>
     <div class="container">
-      <h1>Generate a <br><strong>random password</strong></h1>
+      <h1 class="heading">Generate a <strong>random password</strong></h1>
       <p>Never use an insecure password again.</p>
-      <button class="btn btn-generate" onclick="generateRandomPassword()">Generate passwords</button>
+      <!-- password options -->
+      <div class="password-options">
+        <div class="mb-1">
+          <label for="pwLength">Password length </label>
+          <button class="btn btn-normal btn-small btn-decrease" onclick="decreaseNum()">-</button>
+          <span id="pw-length">12</span>
+          <button class="btn btn-normal btn-small btn-increase" onclick="increaseNum()">+</button>
+          <!-- <small>(min 8 - 15 max)</small> -->
+        </div>
+
+        <!-- <div class="mb-1">
+          <input type="checkbox" id="pwSymbol" name="pwSymbol" checked>
+          <label for="pwSymbol">Include symbols</label>
+        </div>
+        <div class="mb-1">
+          <input type="checkbox" id="pwNumber" name="pwNumber" checked>
+          <label for="pwNumber">Include numbers</label>
+        </div> -->
+
+        <div class="mb-1">
+          <label class="checkbox-container">Include symbols
+            <input type="checkbox" id="pwSymbol" name="pwSymbol" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+
+        <div class="mb-1">
+          <label class="checkbox-container">Include numbers
+            <input type="checkbox" id="pwNumber" name="pwNumber" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+
+        
+      </div>
+
+      <button class="btn btn-normal" onclick="generateRandomPassword()">Generate passwords</button>
       <div class="password-outputs">
         <p class="btn btn-password" id="first-password" onclick="copyFirstPassword()"></p>
         <p class="btn btn-password" id="second-password" onclick="copySecondPassword()"></p>
