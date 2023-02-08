@@ -24,7 +24,11 @@ const inputValuesList = document.querySelectorAll('section p span')
 
 // Increase input as number size increases
 inputEl.addEventListener('input', function() {
-  inputEl.style.width = ((inputEl.value.length + 1) * 44) + 'px'
+  if (inputEl.value.length > 2) {
+    inputEl.style.width = ((inputEl.value.length + 1) * 44) + 'px'
+  } else {
+    inputEl.style.width = '7.5rem'
+  }
 })
 
 convertButton.addEventListener('click', function(e) {
