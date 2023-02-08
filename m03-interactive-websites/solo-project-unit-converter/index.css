@@ -37,6 +37,7 @@ h1 {
   font-weight: 800;
   font-size: 1.75rem;
   color: #fff;
+  text-align: center;
 }
 
 form {
@@ -108,6 +109,7 @@ main {
 section {
   padding: 1.5rem 2.125rem;
   background-color: var(--white-color);
+  border-radius: 4px 0 0 0;
   text-align: center;
   margin: 0.75rem 0;
 }
@@ -126,12 +128,18 @@ p {
   color: var(--light-text-color);
 }
 
+strong {
+  font-weight: normal;
+}
+
 @media screen and (min-width: 550px) {
   body {
     margin: 3rem auto;
     padding: 0;
   }
-  header, main {
+
+  header,
+  main {
     width: 550px;
   }
 }

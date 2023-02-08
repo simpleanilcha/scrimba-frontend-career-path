@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,11 +11,12 @@
   <link rel="stylesheet" href="index.css">
   <title>Unit Converter</title>
 </head>
+
 <body>
   <header>
     <h1>Metric/Imperial Unit Conversion</h1>
     <form>
-      <input type="number" value="20" />
+      <input type="number" />
       <button>Convert</button>
     </form>
   </header>
@@ -22,18 +24,28 @@
   <main>
     <section>
       <h2>Length (Meter/Feet)</h2>
-      <p>20 meters = 65.616 feet | 20 feet = 6.096 meters</p>
+      <p>
+        <span>20</span> meters = <strong id="meter-feet"></strong> feet |
+        <span>20</span> feet = <strong id="feet-meter"></strong> meters
+      </p>
     </section>
     <section>
       <h2>Volume (Liters/Gallons)</h2>
-      <p>20 liters = 5.284 gallons | 20 gallons = 75.708 liters</p>
+      <p>
+        <span>20</span> liters = <strong id="liter-gallon"></strong> gallons | 
+        <span>20</span> gallons = <strong id="gallon-liter"></strong> liters
+      </p>
     </section>
     <section>
       <h2>Mass (Kilograms/Pounds)</h2>
-      <p>20 kilos = 44.092 pounds | 20 pounds = 9.072 kilos</p>
+      <p>
+        <span>20</span> kilos = <strong id="kilo-pound"></strong> pounds | 
+        <span>20</span> pounds = <strong id="pound-kilo"></strong> kilos
+      </p>
     </section>
   </main>
 
   <script src="index.js"></script>
 </body>
+
 </html>
