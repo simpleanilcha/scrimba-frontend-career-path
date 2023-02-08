@@ -7,3 +7,14 @@ Figma file: https://www.figma.com/file/cqtGul0V8RFXY4vTcIv1Kc/Unit-Conversion?no
 1 liter = 0.264 gallon
 1 kilogram = 2.204 pound
 */
+
+// Increase input as number size increases
+const inputEl = document.querySelector('input')
+inputEl.addEventListener('input', function() {
+  inputEl.style.width = ((inputEl.value.length + 1) * 44) + 'px'
+})
+
+const convertButton = document.querySelector('button')
+convertButton.addEventListener('click', function(e) {
+  e.preventDefault()
+})

@@ -1,3 +1,137 @@
-body {
+:root {
+  --purple-color: #6943FF;
+  --light-gray-color: #F4F4F4;
+  --white-color: #fff;
+  --light-header-color: #5A537B;
+  --light-text-color: #353535;
+  --inter-font-family: 'Inter', sans-serif;
+  --light-body-color: #482bbb;
+}
+
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 1rem auto;
+  background-color: var(--light-body-color);
+  font-family: var(--inter-font-family);
+  padding: 1rem;
+}
+
+header {
+  width: 100%;
+  background-color: var(--purple-color);
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 8px 8px 0 0;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 1.75rem;
+  color: #fff;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+input {
+  background-color: var(--purple-color);
+  color: #fff;
+  border: 2px solid #B295FF;
+  border-radius: 5px;
+  font: 800 3.625rem var(--inter-font-family);
+  text-align: center;
+  padding: 0.25rem 1rem 0.5rem;
+  margin: 2rem 0;
+  width: 7.5rem;
+  max-width: 100%;
+}
+
+/* Hide Arrows From Input Number */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+button {
+  background: #FFFFFF;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  width: 120px;
+  height: 42px;
+  border: 1px solid transparent;
+  font: 500 1rem var(--inter-font-family);
+  line-height: 1.5rem;
+  cursor: pointer;
+  transition: 0.1s all;
+}
+
+button:hover {
+  border: 1px solid #fff;
+  background-color: var(--light-body-color);
+  color: var(--light-gray-color);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+main {
+  width: 100%;
+  background-color: var(--light-gray-color);
+  margin: 0 auto;
+  padding: 1.5rem;
+  border-radius: 0 0 8px 8px;
+}
+
+section {
+  padding: 1.5rem 2.125rem;
+  background-color: var(--white-color);
+  text-align: center;
+  margin: 0.75rem 0;
+}
+
+h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-style: normal;
+  color: var(--light-header-color);
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--light-text-color);
+}
+
+@media screen and (min-width: 550px) {
+  body {
+    margin: 3rem auto;
+    padding: 0;
+  }
+  header, main {
+    width: 550px;
+  }
 }

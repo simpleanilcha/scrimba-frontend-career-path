@@ -4,9 +4,36 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+  <title>Unit Converter</title>
 </head>
 <body>
-  
+  <header>
+    <h1>Metric/Imperial Unit Conversion</h1>
+    <form>
+      <input type="number" value="20" />
+      <button>Convert</button>
+    </form>
+  </header>
+
+  <main>
+    <section>
+      <h2>Length (Meter/Feet)</h2>
+      <p>20 meters = 65.616 feet | 20 feet = 6.096 meters</p>
+    </section>
+    <section>
+      <h2>Volume (Liters/Gallons)</h2>
+      <p>20 liters = 5.284 gallons | 20 gallons = 75.708 liters</p>
+    </section>
+    <section>
+      <h2>Mass (Kilograms/Pounds)</h2>
+      <p>20 kilos = 44.092 pounds | 20 pounds = 9.072 kilos</p>
+    </section>
+  </main>
+
+  <script src="index.js"></script>
 </body>
 </html>
