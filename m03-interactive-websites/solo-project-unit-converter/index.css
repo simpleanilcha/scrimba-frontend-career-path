@@ -56,7 +56,7 @@ input {
   font: 800 3.625rem var(--inter-font-family);
   text-align: center;
   padding: 0.25rem 1rem 0.5rem;
-  margin: 2rem 0;
+  margin: 2.5rem 0 0.5rem;
   width: 7.5rem;
   max-width: 100%;
 }
@@ -73,6 +73,16 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   appearance: textfield;
   -moz-appearance: textfield;
+}
+
+.error {
+  color: rgb(255 140 140);
+  margin-bottom: 1rem;
+  font-size: 0.75rem;
+}
+
+.d-none {
+  opacity: 0;
 }
 
 button {

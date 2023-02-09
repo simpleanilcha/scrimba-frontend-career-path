@@ -24,10 +24,19 @@ const inputValuesList = document.querySelectorAll('section p span')
 
 // Increase input as number size increases
 inputEl.addEventListener('input', function() {
-  if (inputEl.value.length > 2) {
-    inputEl.style.width = ((inputEl.value.length + 1) * 44) + 'px'
+  const inputValue = inputEl.value
+
+  if (inputValue.length > 2) {
+    inputEl.style.width = ((inputValue.length + 1) * 44) + 'px'
   } else {
     inputEl.style.width = '7.5rem'
+  }
+
+  const errorMsg = document.querySelector('.error')
+  if (!inputValue || inputValue.includes('+') || inputValue.includes('-') || inputValue.includes('e')) {
+    errorMsg.classList.remove('d-none')
+  } else if (inputValue > 0) {
+    errorMsg.classList.add('d-none')
   }
 })
 
@@ -41,24 +50,12 @@ function render() {
   for(let i = 0; i < inputValuesList.length; i++) {
     inputValuesList[i].textContent = inputValue
   }
-
-  const feetOutputEl = document.getElementById('meter-feet')
-  feetOutputEl.textContent = (inputValue * oneMeterToFeetVal).toFixed(3)
-
-  const meterOutputEl = document.getElementById('feet-meter')
-  meterOutputEl.textContent = (inputValue * ( 1 / oneMeterToFeetVal)).toFixed(3)
-
-  const gallonOutputEl = document.getElementById('liter-gallon')
-  gallonOutputEl.textContent = (inputValue * oneLiterToGallonVal).toFixed(3)
-
-  const literOutputEl = document.getElementById('gallon-liter')
-  literOutputEl.textContent = (inputValue * ( 1 / oneLiterToGallonVal)).toFixed(3)
-
-  const poundOutputEl = document.getElementById('kilo-pound')
-  poundOutputEl.textContent = (inputValue * oneKiloToPoundVal).toFixed(3)
-
-  const kiloOutputEl = document.getElementById('pound-kilo')
-  kiloOutputEl.textContent = (inputValue * ( 1 / oneKiloToPoundVal)).toFixed(3)
+  document.getElementById('meter-feet').textContent = (inputValue * oneMeterToFeetVal).toFixed(3)
+  document.getElementById('feet-meter').textContent = (inputValue * ( 1 / oneMeterToFeetVal)).toFixed(3)
+  document.getElementById('liter-gallon').textContent = (inputValue * oneLiterToGallonVal).toFixed(3)
+  document.getElementById('gallon-liter').textContent = (inputValue * ( 1 / oneLiterToGallonVal)).toFixed(3)
+  document.getElementById('kilo-pound').textContent = (inputValue * oneKiloToPoundVal).toFixed(3)
+  document.getElementById('pound-kilo').textContent = (inputValue * ( 1 / oneKiloToPoundVal)).toFixed(3)
 }
 
 render()
