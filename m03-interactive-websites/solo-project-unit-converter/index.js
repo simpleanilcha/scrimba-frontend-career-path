@@ -35,8 +35,10 @@ inputEl.addEventListener('input', function() {
   const errorMsg = document.querySelector('.error')
   if (!inputValue || inputValue.includes('+') || inputValue.includes('-') || inputValue.includes('e')) {
     errorMsg.classList.remove('d-none')
+    convertButton.setAttribute('disabled', 'disabled')
   } else if (inputValue > 0) {
     errorMsg.classList.add('d-none')
+    convertButton.removeAttribute('disabled')
   }
 })
 

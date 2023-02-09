@@ -108,6 +108,13 @@ button:active {
   transform: scale(0.97);
 }
 
+button[disabled], button[disabled]:hover, button[disabled]:active {
+  cursor: not-allowed;
+  background-color: #fff;
+  transform: scale(1);
+  color: var(--light-header-color);
+}
+
 main {
   width: 100%;
   background-color: var(--light-gray-color);
