@@ -3,8 +3,8 @@
 // Figma file: https://www.figma.com/file/h0MKma9TTWzGOMQ9Ia6ROW/Oldagram?node-id=0%3A1&t=40iJISTKNJOnFtNu-0
 
 // Solution:
-// link: 
-// scrim: 
+// link: https://oldagram-2023.netlify.app/
+// scrim: https://scrimba.com/scrim/co4a44c5692b89d396bc6cbe5
 
 const posts = [
     {
@@ -88,14 +88,11 @@ const postContent = document.querySelector('main')
 postContent.innerHTML = renderedPosts.join('')
 
 const ogPosts = document.querySelectorAll('.post')
-// console.log(ogPosts)
 ogPosts.forEach((post, index) => {
-    // console.log(post)
     const postImage = post.children[1]
     const btnHeart = post.querySelector('.btn-heart')
     
     const postLikes = post.querySelector('.post-likes')
-    // console.log(postImage)
     postImage.addEventListener('dblclick', function() {
         postImage.classList.add('clicked')
         postLikes.textContent = posts[index].likes + 1
@@ -123,7 +120,6 @@ ogPosts.forEach((post, index) => {
     function removeHeart() {
         setTimeout(() => {
             const btnHearted = post.querySelector('.active')
-            // console.log(btnHearted)
             if (btnHearted) {
                 btnHearted.addEventListener('click', function() {
                     btnHearted.classList.remove('active')
@@ -135,5 +131,4 @@ ogPosts.forEach((post, index) => {
             }
         }, 800);
     }
-    
 })

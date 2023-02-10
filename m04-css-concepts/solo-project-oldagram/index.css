@@ -76,9 +76,6 @@ main {
 
 .post-img{
     position: relative;
-    /* width: 375px;
-    height: 375px;
-    background-color: #ccc; */
 }
 
 .instagram-heart {   
@@ -124,15 +121,11 @@ main {
 
 .btn {
     border: none;
-    /* width: 24px;
-    height: 24px; */
     cursor: pointer;
     background: transparent;
 }
 
 .btn-heart {
-    /* background: url(/images/icon-heart.png) no-repeat; */
-    /* background-size: 24px 24px; */
     padding: 4px 3px 5px 4px;
     margin-left: -4px;
 }
@@ -151,9 +144,6 @@ main {
 }
 
 .btn-comment {
-    /* background: url(/images/icon-comment.png) no-repeat;
-    background-size: 24px 24px;
-    margin: 0 10px; */
     padding: 5px 4px 5px 5px;
 }
 
@@ -162,8 +152,6 @@ main {
 }
 
 .btn-dm {
-    /* background: url(/images/icon-dm.png) no-repeat;
-    background-size: 24px 24px; */
     padding: 6px 4px 7px 5px;
 }
 
