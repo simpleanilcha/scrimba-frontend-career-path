@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="images/pizza.jpg" type="image/x-icon">
   <!-- Smythe Google font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,38 +20,13 @@
       <p>The best burgers and pizzas in town.</p>
     </div>
   </header>
+  
   <main>
-
     <section id="order-menu">
-
     </section>
 
     <section id="complete-order">
       <div class="container">
-        <!-- <div class="order-condition order-success">
-          <p>Thanks, James! Your order is on its way!</p>
-        </div> -->
-
-        <div class="order-condition order-empty">
-          <p>There is no order. Please add yours.</p>
-        </div>
-
-        <!-- <h2>Your order</h2>
-        <div class="order-items">
-          <div class="order-item">
-            <h2>Pizza <span>remove</span></h2>
-            <p>$14</p>
-          </div>
-          <div class="order-item">
-            <h2>Beer <span>remove</span></h2>
-            <p>$12</p>
-          </div>
-          <div class="order-item total-price">
-            <h2>Total price:</h2>
-            <p>$26</p>
-          </div>
-        </div>
-        <button class="btn btn-normal" id="order-btn">Complet order</button> -->
       </div>
     </section>
   </main>
@@ -59,7 +35,7 @@
   <section id="modal" class="open-modal d-none">
     <div class="modal-container">
       <h3>Enter card details</h3>
-      <form>
+      <form id="order-form">
         <input
           type="text"
           name="fullName" 
@@ -68,7 +44,9 @@
           required
         >
         <input
-          type="text"
+          type="tel"
+          pattern="[0-9\s]{16}"
+          maxlength="16"
           name="cardNumber" 
           aria-label="Full name"
           placeholder="Enter card number"
@@ -76,6 +54,9 @@
         >
         <input
           type="text"
+          type="tel"
+          pattern="[0-9\s]{3}"
+          maxlength="3"
           name="cvv" 
           aria-label="CVV"
           placeholder="Enter CVV"
