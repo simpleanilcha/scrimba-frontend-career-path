@@ -6,8 +6,8 @@
 // help-section: https://projects.scrimba.com/
 
 // Solution:
-// link: 
-// scrim: 
+// link: https://food-order-2023.netlify.app/
+// scrim: https://scrimba.com/scrim/co9e44280a8fd9c260e9feb1e
 
 import { menuArray } from './data.js'
 
@@ -28,7 +28,7 @@ menuArray.forEach(menu => {
         </div>
         <div class="order-details">
           <h2>${menu.name}</h2>
-          <p>${menu.ingredients.toString()}</p>
+          <p>${menu.ingredients.toString().split(',').join(', ')}</p>
           <p class="order-price">$${menu.price}</p>
         </div>
         <div class="order-add">
