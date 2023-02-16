@@ -4,10 +4,103 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Smythe Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="index.css">
   <title>Restaurant Ordering app</title>
 </head>
 <body>
+
+  <header>
+    <div class="container">
+      <h1>Jimmy’s Diner</h1>
+      <p>The best burgers and pizzas in town.</p>
+    </div>
+  </header>
+  <main>
+
+    <section id="order-menu">
+      
+    </section>
+    <!-- <section id="order-menu">
+      <div class="container">
+        <div class="order">
+          <div class="order-item">
+            <img src="./images/pizza.jpg" alt="pizza slice">
+          </div>
+          <div class="order-details">
+            <h2>Pizza</h2>
+            <p>pepperoni,mushrom,mozarella</p>
+            <p class="order-price">$14</p>
+          </div>
+          <div class="order-add">
+            <button>
+              <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.83949 13.8068V0.011363H8.16903V13.8068H6.83949ZM0.612216 7.57955V6.23864H14.3963V7.57955H0.612216Z" fill="#3C3C3C"/>
+                </svg>
+                
+            </button>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <section id="complete-order">
+      <div class="container">
+        <h2>Your order</h2>
+        <div class="order-items">
+          <div class="order-item">
+            <h2>Pizza <span>remove</span></h2>
+            <!-- <button type="button">remove</button> -->
+            <p>$14</p>
+          </div>
+          <div class="order-item">
+            <h2>Beer <span>remove</span></h2>
+            <!-- <button type="button">remove</button> -->
+            <p>$12</p>
+          </div>
+          <div class="order-item total-price">
+            <h2>Total price:</h2>
+            <!-- <button type="button">remove</button> -->
+            <p>$26</p>
+          </div>
+        </div>
+        <button class="btn btn-normal" id="order-btn">Complet order</button>
+      </div>
+    </section>
+  </main>
+
+  <section id="modal" class="open-modal d-none">
+    <div class="modal-container">
+      <h3>Enter card details</h3>
+      <form>
+        <input
+          type="text"
+          name="fullName" 
+          aria-label="Full name"
+          placeholder="Enter your name"
+          required
+        >
+        <input
+          type="text"
+          name="cardNumber" 
+          aria-label="Full name"
+          placeholder="Enter card number"
+          required
+        >
+        <input
+          type="text"
+          name="cvv" 
+          aria-label="CVV"
+          placeholder="Enter CVV"
+          required
+        >
+        <button type="submit" class="btn btn-normal">Pay</button>
+    </form>
+    </div>
+  </section>
   
   <script src="index.js" type="module"></script>
 </body>
