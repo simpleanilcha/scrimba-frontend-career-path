@@ -44,16 +44,15 @@ menuArray.forEach(menu => {
   `
 })
 
-// mainEl.innerHTML = menuList
 orderMenuEl.innerHTML = menuList
 
 const addBtns = document.querySelectorAll('.btn-add')
-console.log(addBtns)
+let removeBtns
 let orderCount = 0
-const orderEl = document.querySelector('#complete-order .container')
+let orderEl = document.querySelector('#complete-order .container')
 let totalPrice = 0
-
-let orderItem = ''
+let orderItemEl = ''
+let orderedItems = ''
 
 addBtns.forEach((btn, index) => {
   btn.addEventListener('click', (e) => {
@@ -63,9 +62,9 @@ addBtns.forEach((btn, index) => {
 
     totalPrice += clickedEl.price
 
-    orderItem += `
-      <div class="order-item">
-        <h2>${clickedEl.name} <span>remove</span></h2>
+    orderItemEl += `
+      <div class="order-item ordered-item">
+        <h2>${clickedEl.name} <span class="remove-order">remove</span></h2>
         <p>$${clickedEl.price}</p>
       </div>
     `
@@ -73,7 +72,7 @@ addBtns.forEach((btn, index) => {
     orderEl.innerHTML = `
       <h2>Your order</h2>
       <div class="order-items">
-        ${orderItem}
+        ${orderItemEl}
         <div class="order-item total-price">
           <h2>Total price:</h2>
           <p>$${totalPrice}</p>
@@ -81,10 +80,54 @@ addBtns.forEach((btn, index) => {
       </div>
       <button class="btn btn-normal" id="order-btn">Complet order</button>
     `
-    console.log(clickedEl)
+    removeOrderItem()
     checkOrderBtnClick()
   })
 })
+
+function removeOrderItem() {
+  removeBtns = document.querySelectorAll('.remove-order')
+  orderedItems = document.querySelectorAll('.ordered-item')
+
+  removeBtns.forEach((btn, index) => {
+    btn.addEventListener('click', (e) => {
+
+      orderCount--
+
+      let removedItem = orderedItems[index]
+      let removedItemPrice = removedItem.querySelector('p').innerText.substring(1)
+      removedItemPrice = Number(removedItemPrice)
+
+      totalPrice -= removedItemPrice
+
+      orderedItems[index].remove()
+      
+      const totalPriceEl = document.querySelector('.total-price p')
+      totalPriceEl.innerHTML = `$${totalPrice}`
+
+      orderItemEl = ''
+      const items = document.querySelectorAll('.ordered-item')
+      for (let i = 0; i < items.length; i++) {
+        orderItemEl += `
+          <div class="order-item ordered-item">
+            ${items[i].innerHTML}
+          </div>
+        `
+      }
+
+      if (!orderCount) {
+        orderItemEl = ''
+        totalPrice = 0
+        orderEl.innerHTML = `
+        <div class="order-condition order-empty">
+          <p>There is no order. Please add yours.</p>
+        </div>
+        `
+      }
+
+    })
+  })
+}
 
 
 // MODAL OPEN CLOSE
@@ -120,5 +163,3 @@ function closeModal (event) {
     }, 100);
   }
 }
-
-// checkOrderBtnClick()
