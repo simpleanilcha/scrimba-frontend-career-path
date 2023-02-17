@@ -185,8 +185,5 @@ function resetModalInputs() {
   openModalEl.classList.add('d-none')
   bodyEl.classList.remove('modal-open')
   isModalOpen = false
-  let elements = document.getElementsByTagName("input")
-  for (let i = 0; i < elements.length; i++) {
-    elements[i].value = ""
-  }
+  orderForm.reset()
 }
