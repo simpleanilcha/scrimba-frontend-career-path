@@ -15,53 +15,53 @@ const payModal = document.querySelector('#modal')
 const bodyEl = document.querySelector('body')
 let isModalOpen = false
 const openModalEl = document.getElementsByClassName('open-modal')[0];
-
 const orderMenuEl = document.getElementById('order-menu')
 let menuList = ''
-menuArray.forEach(menu => {
-  menuList += `
-    <div class="container">
-      <div class="order">
-        <div class="order-item">
-          <!--<img src="./images/pizza.jpg" alt="pizza slice"> -->
-          <p class="item-emoji">${menu.emoji}</p>
-        </div>
-        <div class="order-details">
-          <h2>${menu.name}</h2>
-          <p>${menu.ingredients.toString().split(',').join(', ')}</p>
-          <p class="order-price">$${menu.price}</p>
-        </div>
-        <div class="order-add">
-          <button class="btn-add">
-            <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6.83949 13.8068V0.011363H8.16903V13.8068H6.83949ZM0.612216 7.57955V6.23864H14.3963V7.57955H0.612216Z" fill="#3C3C3C"/>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  `
-})
-
-orderMenuEl.innerHTML = menuList
-
-const addBtns = document.querySelectorAll('.btn-add')
-let removeBtns
 let orderCount = 0
 let orderEl = document.querySelector('#complete-order .container')
 let totalPrice = 0
 let orderItemEl = ''
 let orderedItems = ''
 let orderForm = ''
-
 const emptyOrderEl = `
   <div class="order-condition order-empty">
     <p>There is no order. Please add yours.</p>
   </div>
 `
-orderEl.innerHTML = emptyOrderEl
 
-addBtns.forEach((btn, index) => {
+function renderMenu() {
+  menuArray.forEach(menu => {
+    menuList += `
+      <div class="container">
+        <div class="order">
+          <div class="order-item">
+            <!--<img src="./images/pizza.jpg" alt="pizza slice"> -->
+            <p class="item-emoji">${menu.emoji}</p>
+          </div>
+          <div class="order-details">
+            <h2>${menu.name}</h2>
+            <p>${menu.ingredients.toString().split(',').join(', ')}</p>
+            <p class="order-price">$${menu.price}</p>
+          </div>
+          <div class="order-add">
+            <button class="btn-add">
+              <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.83949 13.8068V0.011363H8.16903V13.8068H6.83949ZM0.612216 7.57955V6.23864H14.3963V7.57955H0.612216Z" fill="#3C3C3C"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    `
+  })
+  
+  orderMenuEl.innerHTML = menuList
+  orderEl.innerHTML = emptyOrderEl
+}
+
+renderMenu()
+
+document.querySelectorAll('.btn-add').forEach((btn, index) => {
   btn.addEventListener('click', (e) => {
     
     orderCount++
@@ -91,7 +91,7 @@ addBtns.forEach((btn, index) => {
 })
 
 function removeOrderItem() {
-  removeBtns = document.querySelectorAll('.remove-order')
+  const removeBtns = document.querySelectorAll('.remove-order')
   orderedItems = document.querySelectorAll('.ordered-item')
 
   removeBtns.forEach((btn, index) => {
