@@ -1,4 +1,4 @@
-# Solo Project: Digital Business Card
+# React Info Site
 
 Quick start:
 
