@@ -403,10 +403,14 @@ var _Navbar = __webpack_require__(6);
 
 var _Navbar2 = _interopRequireDefault(_Navbar);
 
+var _Hero = __webpack_require__(17);
+
+var _Hero2 = _interopRequireDefault(_Hero);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /*
-Challenge: Build the Navbar component.
+Challenge: Build the Hero component.
 Check the Figma file for the design specifics.
 */
 
@@ -414,7 +418,8 @@ function App() {
     return _react2.default.createElement(
         "div",
         null,
-        _react2.default.createElement(_Navbar2.default, null)
+        _react2.default.createElement(_Navbar2.default, null),
+        _react2.default.createElement(_Hero2.default, null)
     );
 }
 
@@ -30524,6 +30529,42 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Hero;
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Hero() {
+  return _react2.default.createElement(
+    "section",
+    { className: "hero" },
+    _react2.default.createElement("img", { src: "../images/photo-grid.png", className: "hero--photo" }),
+    _react2.default.createElement(
+      "h1",
+      { className: "hero--header" },
+      "Online Experiences"
+    ),
+    _react2.default.createElement(
+      "p",
+      { className: "hero--text" },
+      "Join unique interactive activities led by one-of-a-kind hosts\u2014all without leaving home."
+    )
+  );
+}
 
 /***/ })
 /******/ ]);
