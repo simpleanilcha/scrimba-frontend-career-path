@@ -420,13 +420,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function App() {
     var cards = _data2.default.map(function (card) {
         return _react2.default.createElement(_Card2.default, {
+            key: card.id,
             img: card.coverImg,
             rating: card.stats.rating,
             reviewCount: card.stats.reviewCount,
             location: card.location,
             title: card.title,
             price: card.price,
-            key: card.id
+            openSpots: card.openSpots
         });
     });
     return _react2.default.createElement(
@@ -434,7 +435,11 @@ function App() {
         null,
         _react2.default.createElement(_Navbar2.default, null),
         _react2.default.createElement(_Hero2.default, null),
-        cards
+        _react2.default.createElement(
+            "section",
+            { className: "cards-list" },
+            cards
+        )
     );
 }
 
@@ -522,10 +527,20 @@ Notes:
 */
 
 function Card(props) {
-  console.log('props', props);
+  var badgeText = void 0;
+  if (props.openSpots === 0) {
+    badgeText = "SOLD OUT";
+  } else if (props.location === "Online") {
+    badgeText = "ONLINE";
+  }
   return _react2.default.createElement(
     "div",
     { className: "card" },
+    badgeText && _react2.default.createElement(
+      "div",
+      { className: "card--badge" },
+      badgeText
+    ),
     _react2.default.createElement("img", {
       src: "../images/" + props.img,
       className: "card--image " + (props.img ? 'x' : 'y')
