@@ -421,13 +421,7 @@ function App() {
     var cards = _data2.default.map(function (card) {
         return _react2.default.createElement(_Card2.default, {
             key: card.id,
-            img: card.coverImg,
-            rating: card.stats.rating,
-            reviewCount: card.stats.reviewCount,
-            location: card.location,
-            title: card.title,
-            price: card.price,
-            openSpots: card.openSpots
+            item: card
         });
     });
     return _react2.default.createElement(
@@ -528,9 +522,9 @@ Notes:
 
 function Card(props) {
   var badgeText = void 0;
-  if (props.openSpots === 0) {
+  if (props.item.openSpots === 0) {
     badgeText = "SOLD OUT";
-  } else if (props.location === "Online") {
+  } else if (props.item.location === "Online") {
     badgeText = "ONLINE";
   }
   return _react2.default.createElement(
@@ -542,8 +536,8 @@ function Card(props) {
       badgeText
     ),
     _react2.default.createElement("img", {
-      src: "../images/" + props.img,
-      className: "card--image " + (props.img ? 'x' : 'y')
+      src: "../images/" + props.item.coverImg,
+      className: "card--image " + (props.item.coverImg ? 'x' : 'y')
     }),
     _react2.default.createElement(
       "div",
@@ -552,25 +546,25 @@ function Card(props) {
       _react2.default.createElement(
         "span",
         null,
-        props.rating
+        props.item.stats.rating
       ),
       _react2.default.createElement(
         "span",
         { className: "gray" },
         "(",
-        props.reviewCount,
+        props.item.stats.reviewCount,
         ") \u2022 "
       ),
       _react2.default.createElement(
         "span",
         { className: "gray" },
-        props.location
+        props.item.location
       )
     ),
     _react2.default.createElement(
       "p",
       null,
-      props.title
+      props.item.title
     ),
     _react2.default.createElement(
       "p",
@@ -579,7 +573,7 @@ function Card(props) {
         "span",
         { className: "bold" },
         "From $",
-        props.price
+        props.item.price
       ),
       " / person"
     )
