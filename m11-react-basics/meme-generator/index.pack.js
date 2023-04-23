@@ -540,14 +540,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function Meme() {
-  /**
-   * Challenge: 
-   * 1. Set up the text inputs to save to
-   *    the `topText` and `bottomText` state variables.
-   * 2. Replace the hard-coded text on the image with
-   *    the text being saved to state.
-   */
-
   var _React$useState = _react2.default.useState({
     topText: "",
     bottomText: "",
